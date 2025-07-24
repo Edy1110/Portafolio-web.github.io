@@ -1,0 +1,584 @@
+
+/* --- Header y Navegación (Navbar) --- */
+header {
+    background-color: #af1515; /* Color de fondo del header */
+    padding: 1rem 0; /* Padding vertical */
+    text-align: center; /* Centra el contenido del header */
+    position: sticky; /* Navbar pegajoso al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.menu {
+    display: flex; /* Utiliza flexbox para alinear los enlaces */
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 3cm; /* Espacio de 3 cm entre los enlaces */
+    max-width: 1000px; /* Ancho máximo para el menú */
+    margin: 0 auto; /* Centra el menú dentro del header */
+    padding: 0 20px; /* Padding horizontal para pantallas pequeñas */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en varias líneas en móviles */
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto de los enlaces se rompa */
+    flex-shrink: 0; /* Evita que los enlaces se encojan */
+}
+
+.menu a:hover {
+    background-color: #7b1010; /* Color de fondo al pasar el ratón */
+    border-radius: 5px;
+}
+
+/* --- Estilos Generales para Secciones Internas (Trabajos, Proyectos, etc.) --- */
+main {
+    padding: 2rem 0; /* Padding para el contenido principal */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem; /* Espacio sobre el footer */
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Responsividad --- */
+/* Media query para pantallas de tabletas y más grandes (desktop) */
+@media (min-width: 769px) {
+    /* Asegura que la navegación siga el patrón de desktop si hay espacio */
+    .menu {
+        flex-wrap: nowrap; /* No permite que los enlaces se envuelvan */
+        gap: 3cm; /* Mantén el espacio de 3cm */
+    }
+
+    /* Asegura que las tarjetas de trabajo/proyecto no se vean demasiado grandes en desktop si el diseño es de grilla */
+    .work-card, .project-card {
+        width: auto; /* Deshabilita el ancho fijo de 500px, deja que la grilla lo maneje */
+    }
+}
+
+/* Media query para pantallas de tabletas (máx. 768px) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Apila los botones de navegación */
+        gap: 1.5rem; /* Reduce el espacio entre los botones apilados */
+        padding: 0 15px; /* Ajusta el padding horizontal */
+    }
+
+    .menu a {
+        padding: 0.7rem 1rem; /* Ajusta el padding de los botones */
+        font-size: 1.05rem;
+    }
+
+    .section-page {
+        padding: 2rem 1rem; /* Reduce el padding de las secciones */
+        margin: 1rem auto;
+    }
+
+    .section-title {
+        font-size: 2rem; /* Reduce el tamaño del título de sección */
+        margin-bottom: 2rem;
+    }
+
+    .works-grid, .projects-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 20px;
+    }
+    
+    .work-card, .project-card {
+        max-width: 400px; /* Ancho máximo para las tarjetas en móviles */
+        margin: 0 auto; /* Centra las tarjetas en el medio */
+    }
+
+    .work-card h3, .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .work-card p, .project-card p {
+        text-align: left; /* En pantallas muy pequeñas, justificar puede verse raro */
+    }
+}
+
+/* Media query para smartphones muy pequeños (máx. 480px) */
+@media (max-width: 480px) {
+    .menu {
+        gap: 1rem;
+    }
+    .menu a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .work-card, .project-card {
+        max-width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+    }
+    .work-card h3, .project-card h3 {
+        font-size: 1.2rem;
+    }
+    .work-card p, .project-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Global Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Importante para el layout */
+    background-color: #f4f4f4;
+    color: #990c0c;
+    /*line-height: 1.6;*/
+}
+
+/* --- Header and Navigation --- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky; /* Sticky navigation */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #007bff; /* Color para el apellido */
+}
+
+.nav-link {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0; /* Eliminar margen predeterminado de ul */
+    padding: 0; /* Eliminar padding predeterminado de ul */
+}
+
+.nav-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+    color: #007bff;
+}
+
+/* --- Hero Section (Inicio) --- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #e9ecef;
+    min-height: 80vh; /* Altura mínima para que ocupe gran parte de la pantalla */
+    gap: 2rem;
+    flex-wrap: wrap; /* Para responsividad */
+    text-align: center; /* Alineación por defecto para asegurar la imagen se centra en móviles */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px; /* Asegura que el texto no se haga muy pequeño */
+    text-align: center; 
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+    transform: translateY(-5px);
+}
+
+.hero-image {
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    margin-left: 2rem; /* Espacio a la izquierda del texto */
+    max-width: 350px; /* Ajusta el tamaño máximo de la imagen */
+    border-radius: 8px; /* Si quieres bordes ligeramente redondeados, no circular */
+    overflow: hidden; /* Asegura que la imagen no desborde */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción original */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+}
+
+
+/* --- General Section Styling (aplicable a todas las secciones en cualquier HTML) --- */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #212529;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* --- Experiencia Section --- */
+.experiencia {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #ddd;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.timeline-content {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    position: relative;
+    text-align: left;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+}
+
+.timeline-content .date {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.timeline-content .skill {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.timeline-content .skill li {
+    background-color: #e2e6ea;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- Proyectos Section --- */
+.projects {
+    background-color: #e9ecef;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #333;
+    text-align: left;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech span {
+    background-color: #cfe2ff;
+    color: #084298;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #0056b3;
+}
+
+.project-links a i {
+    font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #a01414;
+    color: #fff;
+    text-align: center;
+    padding: 0rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+}
+
+footer .social-links a {
+    color: #fff;
+}
+
+footer .social-links a:hover {
+    color: #007bff;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav-link {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-image {
+        margin-left: 0;
+        margin-top: 2rem;
+        max-width: 300px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        margin: 0 auto;
+    }
+}

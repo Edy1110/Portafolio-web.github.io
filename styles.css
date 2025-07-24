@@ -1,0 +1,206 @@
+/* Estilos generales 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #efcbcb;
+  line-height: 0.6;
+}
+
+header {
+  background-color: #af1515;
+ 
+  padding: 1rem 0;
+  text-align: center;
+}
+*/
+header {
+    background-color: #af1515; /* Color de fondo del header */
+    padding: 2rem 0; /* Padding vertical */
+    text-align: center; /* Centra el contenido del header */
+    position: sticky; /* Navbar pegajoso al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+
+
+/*
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+*/
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+/*
+.menu a:hover {
+  background-color: #d3d2d2;
+  border-radius: 5px;
+}
+  */
+  
+.content {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+/*
+h1, h2, h3 {
+  text-align: center;
+  color: #0f1112;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.topbar {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+*/
+/* Sección de cabecera con texto a la izquierda e imagen a la derecha */
+
+.header-section {
+  display: flex;
+  justify-content: space-between; /* Empuja los elementos a los extremos */
+  align-items: center; /* Centra verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+} 
+
+ .text-left {
+  flex: 1; /* Ocupa el espacio disponible */
+   min-width: 400px; /* Ancho mínimo para el texto antes de envolver */
+  text-align: justify; /* Alinea el texto a la izquierda */
+  padding-right: 20px; /* Espacio entre el texto y la imagen */
+} 
+
+.text-left h1, .text-left h2 {
+  text-align: center; /* Asegura que los títulos dentro de esta sección estén a la izquierda */
+}
+
+
+.image-right {
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+  max-width: 40%; /* La imagen ocupa máximo el 40% del ancho */
+  text-align: right; /* Alinea la imagen a la derecha */
+}
+
+.image-right img {
+  max-width: 100%; /* Asegura que la imagen no desborde su contenedor */
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 20.2);
+}
+
+/* Imágenes en línea (una tras otra con espacio) */
+.inline-images-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten a la siguiente línea si no hay espacio */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  gap: 1cm; /* Espacio de 1cm entre las imágenes */
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.inline-images-section img {
+  max-width: 200px; /* Ajusta el tamaño de tus imágenes si es necesario */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*TRABAJOS REALIZADOS*/
+
+
+
+
+
+
+
+/* --- texto configuración */
+body {
+  
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Fundamental para el control del modelo de caja */
+  background-color: #f4f4f4;
+  color: #333;
+  /*line-height: 1.6;*/
+}
+
+
+
+/* --- Footer --- */
+footer {
+  background-color: #a50808;
+  color: #fff;
+  text-align: center;
+  padding: 0rem;
+  margin-top: 0rem; /* Espacio sobre el footer */
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center; /* Centra los íconos sociales */
+  gap: 20px;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+  transform: translateY(-5px);
+}
